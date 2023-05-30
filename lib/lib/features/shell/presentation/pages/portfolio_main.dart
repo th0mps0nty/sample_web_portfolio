@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sample_web/lib/features/navigation/presentation/widgets/left_navigation.dart';
 import 'package:sample_web/lib/helpers/utils.dart';
+import 'package:sample_web/lib/styles/personal_portfolio_colors.dart';
 
 class PortfolioMainPage extends StatelessWidget {
   static const String route = '/main';
@@ -9,6 +11,19 @@ class PortfolioMainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(key: Utils.mainScaffold, body: child);
+    return Scaffold(
+        key: Utils.mainScaffold,
+        backgroundColor: PersonalPortfolioColors.mainBlue,
+        body: Stack(
+          children: [
+            Center(
+              child: child,
+            ),
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: LeftNavigation(),
+            ),
+          ],
+        ));
   }
 }

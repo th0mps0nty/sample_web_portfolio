@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sample_web/lib/routes/app_routes.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const PortfolioApp());
+  runApp(
+    const ProviderScope(
+      child: PortfolioApp(),
+    ),
+  );
 }
 
 class PortfolioApp extends StatelessWidget {
@@ -13,8 +18,9 @@ class PortfolioApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
         title: 'Portfolio App',
-        debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
         theme: ThemeData(
+        // brightness: Brightness.dark,
           fontFamily: 'Product Sans',
         ),
       routeInformationProvider: AppRoutes.router.routeInformationProvider,

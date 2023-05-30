@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 class PersonalPortfolioColors {
   // Dark Theme
-  // static const darkThemeBackground = 0xFF1E1E1E;
-  // static const darkThemePrimary = 0xFF2A2A2A;
-  // static const darkThemeSecondary = 0xFF3A3A3A;
-  // static const darkThemeAccent = 0xFF4A4A4A;
-  // static const darkThemeText = 0xFFFFFFFF;
-  // static const darkThemeTextSecondary = 0xFFBDBDBD;
-  // static const darkThemeTextAccent = 0xFF757575;
+  static const mainDarkBackground = Color(0xFF1E1E1E);
+  static const mainDarkPrimary = Color(0xFF2A2A2A);
+  static const mainDarkSecondary = Color(0xFF3A3A3A);
+  static const mainDarkAccent = Color(0xFF4A4A4A);
+  static const mainDarkText = Color(0xFFFFFFFF);
+  static const mainDarkTextSecondary = 0xFFBDBDBD;
+  static const mainDarkTextAccent = Color(0xFF757575);
 
   static const Color mainBlue = Color(0xFF51BFD7);
   static const Color secondaryBlue = Color(0XFF1E6B7C);
