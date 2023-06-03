@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sample_web/lib/features/github/presentation/pages/github_page.dart';
+import 'package:sample_web/lib/features/linkedIn/presentation/pages/linkedIn_page.dart';
+import 'package:sample_web/lib/features/twitter/presentation/pages/twitter_page.dart';
+import 'package:sample_web/lib/features/web/presentation/pages/web_page.dart';
+import 'package:sample_web/lib/features/welcome/presentation/pages/welcome_page.dart';
 
 class PersonalPortfolioColors {
   // Dark Theme
@@ -46,4 +51,55 @@ class PersonalPortfolioColors {
   static const Color githubIcon = Color(0xFFBEBEBE);
   static const Color githubPrimary = Color(0xFF6C6C6C);
   static const Color githubSecondary = Color(0xFF3B3B3B);
+
+static Map<String, LinearGradient> pageColor = {
+    WelcomePage.route: const LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        welcomePrimary,
+        welcomeSecondary,
+      ],
+    ),
+    TwitterPage.route: const LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        twitterPrimary,
+        twitterSecondary,
+      ],
+    ),
+    LinkedInPage.route: const LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        linkedInPrimary,
+        linkedInSecondary,
+      ],
+    ),
+    WebPage.route: const LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        webPrimary,
+        webSecondary,
+      ],
+    ),
+    GithubPage.route: const LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        githubPrimary,
+        githubSecondary,
+      ],
+    ),
+  };
+
+  static Map<String, Color> pageIconColor = {
+    WelcomePage.route: welcomeIcon,
+    TwitterPage.route: twitterIcon,
+    LinkedInPage.route: linkedInIcon,
+    WebPage.route: webIcon,
+    GithubPage.route: githubIcon,
+  };
 }

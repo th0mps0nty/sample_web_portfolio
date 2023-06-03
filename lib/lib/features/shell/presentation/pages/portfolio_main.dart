@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sample_web/lib/features/navigation/presentation/widgets/left_navigation.dart';
 import 'package:sample_web/lib/helpers/utils.dart';
+import 'package:sample_web/lib/shared/widgets/page_color.dart';
 import 'package:sample_web/lib/styles/personal_portfolio_colors.dart';
 
 class PortfolioMainPage extends StatelessWidget {
@@ -16,6 +17,7 @@ class PortfolioMainPage extends StatelessWidget {
         backgroundColor: PersonalPortfolioColors.mainBlue,
         body: Stack(
           children: [
+            const PageColor(),
             Center(
               child: child,
             ),
