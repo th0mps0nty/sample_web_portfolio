@@ -4,6 +4,7 @@ import 'package:sample_web/lib/features/welcome/data/repositories/iwelcome_repos
 class MockWelcomeRepository implements IWelcomeRepository {
   @override
   Future<WelcomePageModel> getWelcomePageData() {
+    // return Future.error('Error retrieving for the welcome page data');
     return Future.delayed(const Duration(seconds: 2), () {
       return WelcomePageModel(
           name: 'Tyler Thompson',
