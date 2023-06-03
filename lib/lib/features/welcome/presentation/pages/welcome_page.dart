@@ -60,9 +60,9 @@ class WelcomePage extends ConsumerWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(welcomeData.title,
-                              textAlign: TextAlign.center, style: TextStyle(fontSize: 40, color: Colors.white)),
+                              textAlign: TextAlign.center, style: const TextStyle(fontSize: 40, color: Colors.white)),
                           Text(welcomeData.subTitle,
-                              textAlign: TextAlign.center, style: TextStyle(fontSize: 40, color: Colors.white)),
+                              textAlign: TextAlign.center, style: const TextStyle(fontSize: 40, color: Colors.white)),
                         ],
                       )
                     ])
