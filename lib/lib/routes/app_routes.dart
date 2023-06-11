@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:sample_web/lib/features/error/presentation/pages/error_page.dart';
 import 'package:sample_web/lib/features/github/presentation/pages/github_page.dart';
 import 'package:sample_web/lib/features/linkedIn/presentation/pages/linkedIn_page.dart';
 import 'package:sample_web/lib/features/shell/presentation/pages/portfolio_main.dart';
@@ -12,6 +13,7 @@ class AppRoutes {
   static final router = GoRouter(
     initialLocation: SplashPage.route,
     navigatorKey: Utils.mainNav,
+    errorBuilder: (context, state) => ErrorPage(errorMessage: state.error.toString()),
     routes: [
       GoRoute(
         parentNavigatorKey: Utils.mainNav,
