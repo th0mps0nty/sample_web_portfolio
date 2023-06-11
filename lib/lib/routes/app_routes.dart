@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sample_web/lib/features/error/presentation/pages/error_page.dart';
 import 'package:sample_web/lib/features/github/presentation/pages/github_page.dart';
@@ -29,34 +30,40 @@ class AppRoutes {
             GoRoute(
                 parentNavigatorKey: Utils.tabNav,
                 path: WelcomePage.route,
-                pageBuilder: (context, state) {
-                  return const NoTransitionPage(child: WelcomePage());
-                }),
+                pageBuilder: (context, state) =>
+                    AppRoutes.pageTransition(key: state.pageKey, page: const WelcomePage())),
             GoRoute(
                 parentNavigatorKey: Utils.tabNav,
                 path: TwitterPage.route,
-                pageBuilder: (context, state) {
-                  return const NoTransitionPage(child: TwitterPage());
-                }),
+                pageBuilder: (context, state) =>
+                    AppRoutes.pageTransition(key: state.pageKey, page: const TwitterPage())),
             GoRoute(
                 parentNavigatorKey: Utils.tabNav,
                 path: LinkedInPage.route,
-                pageBuilder: (context, state) {
-                  return const NoTransitionPage(child: LinkedInPage());
-                }),
+                pageBuilder: (context, state) =>
+                    AppRoutes.pageTransition(key: state.pageKey, page: const LinkedInPage())),
             GoRoute(
                 parentNavigatorKey: Utils.tabNav,
                 path: GithubPage.route,
-                pageBuilder: (context, state) {
-                  return const NoTransitionPage(child: GithubPage());
-                }),
+                pageBuilder: (context, state) =>
+                    AppRoutes.pageTransition(key: state.pageKey, page: const GithubPage())),
             GoRoute(
                 parentNavigatorKey: Utils.tabNav,
                 path: WebPage.route,
-                pageBuilder: (context, state) {
-                  return const NoTransitionPage(child: WebPage());
-                }),
+                pageBuilder: (context, state) => AppRoutes.pageTransition(key: state.pageKey, page: const WebPage())),
           ]),
     ], //routes
   );
+
+  static CustomTransitionPage pageTransition({required ValueKey key, required Widget page}) {
+    return CustomTransitionPage(
+        key: key,
+        child: page,
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return FadeTransition(
+            opacity: CurveTween(curve: Curves.easeInOut).animate(animation),
+            child: child,
+          );
+        });
+  }
 }
